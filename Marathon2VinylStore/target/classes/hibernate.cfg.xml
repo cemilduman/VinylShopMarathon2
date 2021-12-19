@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+ 		 <!-- database connection MYSQL -->
+		<!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
+		<!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bilge_adam?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Turkey</property> -->
+		<!-- <property name="hibernate.connection.username">root</property> -->
+		<!-- <property name="hibernate.connection.password">root</property> -->
+		
+		<!-- HQL ile SQL dönüşümünü sağlar dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>		
+
+		<!-- database connection POSTGRESQL -->
+<!-- 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property> -->
+<!-- 		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/cord_records</property> -->
+<!-- 		<property name="hibernate.connection.username">postgres</property> -->
+<!-- 		<property name="hibernate.connection.password">root</property> -->
+
+		<!-- hibernate config --> <!-- consoleda sql sorgularını görmek isteyip istememe kısmı -->
+		<property name="showsql">true</property>
+		<property name="connection.autocommit">true</property>
+		
+		<property name="hbm2ddl.auto">update</property>
+		<!-- create: tamamen sil tekrar oluştur -->
+		<!-- update: tablo yoksa oluştur, varsa güncelle-->
+		<!-- create-drop: varsa siliyor tekrar oluşturuyor yoksa direk oluşturuyor. -->
+			<!-- create-drop: create ile aynı simdilikvarsa siliyor tekrar oluşturuyor yoksa direk oluşturuyor. -->
+		
+		<!-- <property name="hbm2ddl.auto">create</property> -->
+		<!-- <property name="hbm2ddl.auto">update</property> -->
+		<!-- <property name="hbm2ddl.auto">create-drop</property> -->
+
+		<!-- Türkçe karakter sorununu çözecek -->
+		<property name="hibernate.connection.useUnicode">true</property>
+		<property name="hibernate.connection.characterEncoding">UTF-8</property>
+
+		<!--Database kontrolu, POOL KISMI -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">1</property> <!--minimum düzeyde 1 tane connection olsun -->
+		<property name="hibernate.c3p0.max_size">40</property> <!--maksimum  40 tane connection olsun -->
+		<property name="hibernate.c3p0.acquire_increment">1</property> <!--ihtiyac halinde connection sayisini 1er arttir -->
+		<property name="hibernate.c3p0.timeout">1</property> <!--minimum düzeyde 1 tane connection olsun -->
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.c3p0.idle_test_period">1</property>
+		<!--select 1 diye bir sql sorgusu, duzenli connection testi yapıyor -->
+		<property name="hibernate.c3p0.preferredTestQuery">select 1;</property> 
+
+		<!-- second level -->
+		<!--DEFAULT OLARAK 1st level gelir ancak biz override ederek second level kullanıyoruz, daha saglikli-->
+		<!--Database'den gelen verileri second level cache bellekte tutuyor, ordan bize akratiyor-->
+		<property name="hibernate.cache.use_second_level_cache">true</property><!--true second level, false 1st level -->
+		<!--Second level cache ram sisirebilir, oyle bi durumda second level false yapmak mantikli -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+</session-factory>
+</hibernate-configuration>

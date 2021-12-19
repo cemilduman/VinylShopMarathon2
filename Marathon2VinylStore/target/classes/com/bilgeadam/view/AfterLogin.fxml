@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bilgeadam.view.AfterLoginController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="183.0" fitWidth="230.0" layoutX="188.0" layoutY="69.0" pickOnBounds="true">
+               <image>
+                  <Image url="@MetalBackGround.jpg" />
+               </image>
+            </ImageView>
+            <Label blendMode="LIGHTEN" layoutX="248.0" layoutY="21.0" text="WELCOME" textFill="#d2ff0c">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="logOut" layoutX="262.0" layoutY="298.0" mnemonicParsing="false" onAction="#userLogOut" prefHeight="48.0" prefWidth="77.0"  text="Log Out" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,42 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.text-field{
+	-fx-background-color: violet;
+}
+
+.text-field:hover{
+	-fx-background-color: white;
+}
+
+
+.password-field{
+	-fx-background-color: violet;
+}
+
+.password-field:hover{
+	-fx-background-color: white;
+}
+
+.button{
+	-fx-background-color: #ffc900;
+	-fx-background-radius: 15;
+}
+
+.button:hover{
+	-fx-background-color: orange;
+	-fx-background-radius: 60;
+	-fx-border-radius: 60;
+	-fx-border-color: blue;
+	-fx-border-image-width: 60;
+}
+
+
+/*
+  .button-login{
+	-fx-background-color: #ffc900
+}
+
+#button-signup{
+	-fx-background-color: #ffc900
+}
+ */
+
